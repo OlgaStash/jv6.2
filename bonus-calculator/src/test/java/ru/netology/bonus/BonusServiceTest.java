@@ -10,12 +10,12 @@ class BonusServiceTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/data.csv")
 
-  @CsvSource(
-      value={
-          "'registered user, bonus under limit',100060,true,30",
-          "'registered user, bonus over limit',100000060,true,500"
-      }
-  )
+    @CsvSource(
+            value = {
+                    "'registered user, bonus under limit',100060,true,30",
+                    "'registered user, bonus over limit',100000060,true,500"
+            }
+    )
     public void shouldCalculate(String test, long amount, boolean registered, long expected) {
         BonusService service = new BonusService();
 
